@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'next/link';
 import TitleTop from "@/components/atoms/TitleTop"
 import CardPets from "@/components/atoms/CardPets"
+import { BsChevronRight } from "react-icons/bs";
 
 const index = () => {
     const dataPets = [
@@ -83,6 +85,12 @@ const index = () => {
                             <CardPets data={item} key={item?.id} />
                         ))
                     }
+                </div>
+                <div className="section-top-mobile">
+                    <Link href="/" className='button-secondary' >
+                        View more
+                        <BsChevronRight className='inline ml-2' />
+                    </Link>
                 </div>
             </div>
         </section>

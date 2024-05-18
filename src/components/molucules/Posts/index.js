@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from 'next/link';
 import TitleTop from "@/components/atoms/TitleTop"
 import CardPosts from "@/components/atoms/CardPosts"
+import { BsChevronRight } from "react-icons/bs";
 
 const index = () => {
     const dataPosts = [
@@ -41,6 +43,12 @@ const index = () => {
                             <CardPosts data={item} key={item?.id} />
                         ))
                     }
+                </div>
+                <div className="section-top-mobile">
+                    <Link href="/" className='button-secondary' >
+                        View more
+                        <BsChevronRight className='inline ml-2' />
+                    </Link>
                 </div>
             </div>
         </section>

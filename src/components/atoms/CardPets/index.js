@@ -11,9 +11,9 @@ const index = (props) => {
                     {data?.name}
                 </div>
                 <div className="desc">
-                    Genre: <span>{data?.genre}</span>
-                    <span className="px-2"><BsDot /></span>
-                    Age: <span>{data?.age}</span>
+                    <div>Genre: <span>{data?.genre}</span></div>
+                    <div><span className="dot"><BsDot /></span></div>
+                    <div>Age: <span>{data?.age}</span></div>
                 </div>
                 <div className="price">
                     {data?.price}

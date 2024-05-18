@@ -11,8 +11,8 @@ const index = (props) => {
                     {data?.name}
                 </div>
                 <div className="desc">
-                    Product: <span>{data?.product}</span>
-                    {data?.size && (<><span className="px-2"><BsDot /></span> Size: <span>{data?.size}</span></>)}
+                    <div>Product: <span>{data?.product}</span></div>
+                    <div>{data?.size && (<><span className="dot"><BsDot /></span> Size: <span>{data?.size}</span></>)}</div>
                 </div>
                 <div className="price">
                     {data?.price}

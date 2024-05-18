@@ -75,7 +75,7 @@ const index = () => {
     ]
 
     return (
-        <section className="section-pets">
+        <section className="section-pets section-products">
             <div className="container">
                 <TitleTop
                     desc="Hard to choose right products for your pets?"

@@ -6,7 +6,7 @@ const index = () => {
   return (
     <section className="section-banner1">
         <div className="container">
-            <div className="grid grid-cols-2 gap-x-10">
+            <div className="section-banner1-box">
                 <div className="section-banner1-left">
                     <img src="/images/hero/human-2.webp" alt="image"></img>
                 </div>
