@@ -2,19 +2,375 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('/fonts/svn-gilroy.css');
+
+/* Custom Utilities */
+@layer utilities {
+  .text-primary {
+    color: #003459; 
+  }
+  .text-primary-80 {
+    color: #002A48
+  }
+  .text-neutral-100 {
+    color: #00171F
+  }
+  .text-neutral-80 {
+    color: #242B33
+  }
+  .text-neutral-60 {
+    color: #667479
+  }
+  .text-neutral-40 {
+    color: #99A2A5
+  }
+  .text-neutral-0 {
+    color: #FDFDFD;
+  }
+  .bg-primary {
+    background-color: #003459; 
+  }
+  .bg-neutral-0 {
+    background-color: #FDFDFD;
+  }
+  .bg-yellow-40 {
+    background-color: #FCEED5;
+  }
+  .bg-blue {
+    background-color: #00A7E7;
+  }
+  .border-primary {
+    border-color: #003459; 
+  }
+  .border-neutral-20 {
+    border-color: #CCD1D2;
+  }
+  .border-neutral-40 {
+    color: #99A2A5
+  }
+}
+
 /* Custom CSS */
+body {
+  font-family: 'SVN-Gilroy', sans-serif;
+}
+
+.container {
+  @apply mx-auto;
+}
+
+.button-primary {
+  @apply text-white;
+  @apply bg-primary rounded-full py-3 px-8 border-[1.5px] border-primary inline-block;
+}
+.button-secondary {
+  @apply text-primary;
+  @apply bg-transparent rounded-full py-3 px-8 border-[1.5px] border-primary inline-block;
+}
+
 .header {
-  @apply bg-blue-600 text-white p-4;
+  background-image: url('/images/hero/background-1.webp');
+  @apply bg-cover w-full bg-top relative;
+  @apply fixed bg-transparent w-full h-[100px] py-7 z-40;
+}
+.header .container {
+  @apply flex justify-between items-center;
+}
+.header .header-nav-link .header-nav-link-a {
+  @apply text-primary font-bold text-base;
+  @apply mx-6;
+}
+.header .header-search-box {
+  @apply relative w-[280px];
+}
+.header .header-search-box .icon {
+  @apply absolute top-1/2 -translate-y-1/2 ml-4;
+  @apply text-neutral-40;
+}
+.header .header-search-input {
+  @apply bg-white py-3 px-12 rounded-full w-full;
+  @apply text-sm text-primary placeholder:text-neutral-40;
+  @apply focus:outline-none focus:ring-0;
+}
+.button-primary.header-link-join {
+  @apply font-bold text-base;
 }
 
-.main-content {
-  @apply flex flex-col items-center p-6;
+.dropdown {
+  @apply relative inline-block text-left;
+}
+.dropdown .dropdown-parent button {
+  @apply inline-flex justify-between items-center w-full rounded-md p-2 bg-transparent focus:outline-none;
+  @apply text-sm font-medium text-primary;
+}
+.dropdown .dropdown-parent button .dropdown-button-parent {
+  @apply mr-2 flex items-center;
+}
+.dropdown .dropdown-children {
+  @apply origin-top-right absolute right-0 mt-2 w-[100px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
+}
+.dropdown .dropdown-children button {
+  @apply text-left text-primary text-sm;
+  @apply w-full block px-4 py-2;
 }
 
-.card {
-  @apply bg-white shadow-md rounded-lg p-6 m-4 w-full max-w-sm;
+/* main {
+  @apply relative -top-[100px];
+} */
+h1 {
+  @apply text-primary font-extrabold text-6xl;
+}
+h4 {
+  @apply text-primary font-bold text-[46px];
+}
+h5 {
+  @apply text-white font-bold text-2xl;
+}
+h6 {
+  @apply text-primary text-2xl font-bold;
+}
+p {
+  @apply text-base;
 }
 
+.section-hero {
+  background-image: url('/images/hero/background-1.webp');
+  @apply bg-cover w-full bg-center relative pt-[100px];
+}
+.section-hero .container {
+  @apply grid grid-cols-2 gap-x-20 h-full ;
+}
+.section-hero .container .section-hero-left {
+  @apply text-primary-80 flex items-center mb-10;
+}
+.section-hero .container .section-hero-left h1 {
+  @apply mb-1;
+}
+.section-hero .container .section-hero-left h4 {
+  @apply mb-6;
+}
+.section-hero .container .section-hero-left p {
+  @apply mb-8;
+}
+.section-hero .container .section-hero-left .section-hero-button {
+  @apply inline-block;
+}
+.button-secondary.section-hero-button {
+  @apply mr-5 flex items-center;
+}
+.section-hero .container .section-hero-right {
+  @apply w-auto h-full mt-auto;
+}
+
+.section-top {
+  @apply mb-7;
+}
+
+.section-pets {
+  @apply py-[60px] bg-neutral-0;
+}
+.section-pets .section-pets-cards {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-7;
+}
+
+.card-pets {
+  @apply bg-neutral-0 rounded-xl p-2 shadow-md;
+}
+.card-pets img {
+  @apply w-full rounded-lg h-[264px] object-cover;
+}
+.card-pets .card-pets-box {
+  @apply mt-2 p-2 pb-4;
+}
+.card-pets .card-pets-box .name {
+  @apply text-neutral-100 text-base font-bold;
+  @apply mb-1;
+}
+.card-pets .card-pets-box .desc {
+  @apply text-neutral-60 text-xs;
+  @apply mb-1 flex items-center;
+}
+.card-pets .card-pets-box .desc span {
+  @apply font-bold;
+}
+.card-pets .card-pets-box .price {
+  @apply text-neutral-100 text-sm font-bold;
+  @apply mb-1;
+}
+
+.section-banner1 .container {
+  background-image: url('/images/hero/background-2.webp');
+  @apply bg-cover w-full bg-center relative rounded-[20px] px-20 pt-10;
+}
+.section-banner1 .container .section-banner1-left {
+  @apply mt-auto;
+}
+.section-banner1 .container .section-banner1-right h1 {
+  @apply mb-1;
+}
+.section-banner1 .container .section-banner1-right h4 {
+  @apply mb-6;
+}
+.section-banner1 .container .section-banner1-right p {
+  @apply mb-8;
+}
+.section-banner1 .container .section-banner1-right .section-banner1-button {
+  @apply inline-block;
+}
+.section-banner1 .section-banner1-right {
+  @apply text-right flex items-center;
+}
+.button-secondary.section-banner1-button {
+  @apply mr-5 flex items-center;
+}
+
+.card-products {
+  @apply bg-neutral-0 rounded-xl p-2 shadow-md h-auto;
+}
+.card-products img {
+  @apply w-full rounded-lg h-[264px] object-cover;
+}
+.card-products .card-products-box {
+  @apply mt-2 p-2 pb-4;
+}
+.card-products .card-products-box .name {
+  @apply text-neutral-100 text-base font-bold;
+  @apply mb-1;
+}
+.card-products .card-products-box .desc {
+  @apply text-neutral-60 text-xs;
+  @apply mb-1 flex items-center;
+}
+.card-products .card-products-box .desc span {
+  @apply font-bold;
+}
+.card-products .card-products-box .price {
+  @apply text-neutral-100 text-sm font-bold;
+  @apply mb-1;
+}
+.card-products .card-products-box .gift {
+  @apply flex items-center bg-yellow-40 rounded-lg py-2 px-2.5 mt-2;
+}
+.card-products .card-products-box .gift img {
+  @apply w-5 h-5;
+}
+.card-products .card-products-box .gift span {
+  @apply text-sm text-primary-80 font-bold;
+}
+
+.section-brands {
+  @apply py-10;
+}
+.section-brands .section-brands-lists {
+  @apply grid grid-cols-7 gap-5;
+}
+
+.section-brands .section-brands-item {
+  @apply m-auto;
+}
+
+.section-banner2 .container {
+  background-image: url('/images/hero/background-3.webp');
+  @apply bg-cover w-full bg-center relative rounded-[20px] px-16;
+}
+.section-banner2 .container .section-banner2-left {
+  @apply my-auto;
+}
+.section-banner2 .container .section-banner2-left h1 {
+  @apply mb-1 flex items-center;
+}
+.section-banner2 .container .section-banner2-left h4 {
+  @apply mb-6;
+}
+.section-banner2 .container .section-banner2-left p {
+  @apply mb-8;
+}
+.section-banner2 .container .section-banner2-left .section-banner2-button {
+  @apply inline-block;
+}
+.section-banner2 .section-banner2-left {
+  @apply flex items-center;
+}
+.button-secondary.section-banner2-button {
+  @apply flex items-center;
+}
+.button-primary.section-banner2-button {
+  @apply mr-5;
+}
+
+
+.section-posts {
+  @apply py-[60px] bg-neutral-0;
+}
+.section-posts .section-posts-cards {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-5;
+}
+
+.card-posts {
+  @apply bg-neutral-0 rounded-xl p-2 shadow-md;
+}
+.card-posts img {
+  @apply w-full rounded-lg h-[243px] object-cover;
+}
+.card-posts .card-posts-box {
+  @apply mt-2 p-2 pb-4;
+}
+.card-posts .card-posts-box .tag {
+  @apply text-[10px] text-neutral-0 font-bold;
+  @apply mb-2.5 bg-blue rounded-full py-0.5 px-2.5 inline-block;
+}
+.card-posts .card-posts-box .title {
+  @apply text-neutral-100 text-base font-bold;
+  @apply mb-1.5;
+}
+.card-posts .card-posts-box .desc {
+  @apply text-neutral-80 text-sm line-clamp-3;
+}
+
+footer {
+  @apply bg-yellow-40 rounded-t-xl pt-20;
+}
+.subscribe {
+  @apply bg-primary rounded-2xl p-8;
+}
+.subscribe .subscribe-box {
+  @apply grid grid-cols-3 gap-x-10;
+}
+.subscribe .subscribe-box .subscribe-slogan {
+  @apply flex items-center;
+}
+.subscribe .subscribe-form {
+  @apply col-span-2 bg-white rounded-[14px] flex items-center p-3;
+}
+.subscribe .subscribe-form .input-email {
+  @apply flex-grow border border-neutral-40 rounded-lg py-3 px-7;
+}
+.subscribe .subscribe-form .button-subscribe {
+  @apply rounded-lg flex-shrink-0;
+}
+.sitemaps {
+  @apply flex justify-between py-10;
+}
+.sitemaps .sitemaps-link-a {
+  @apply text-neutral-100 text-base;
+  @apply mr-[60px]
+}
+.sitemaps .sitemaps-sosmed {
+  @apply flex;
+}
+.sitemaps .sitemaps-sosmed-a {
+  @apply text-neutral-100;
+  @apply mr-10;
+}
 .footer {
-  @apply bg-gray-800 text-white p-4 text-center;
+  @apply flex items-center justify-between py-10 border-t-[1.5px] border-neutral-20;
+}
+.footer .footer-copyright {
+  @apply text-neutral-60 text-sm;
+}
+.footer .footer-copyright {
+}
+.footer .footer-link-term .footer-link-term-a {
+  @apply text-neutral-60 text-sm;
+  @apply mr-10;  
 }

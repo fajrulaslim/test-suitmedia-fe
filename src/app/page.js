@@ -1,14 +1,13 @@
-import Image from "next/image";
+import Header from "@/components/organisms/Header"
+import Main from "@/components/organisms/Main"
+import Footer from "@/components/organisms/Footer"
 
 export default function Home() {
   return (
-    <main>
-      <header className="header">
-        
-      </header>
-      <div className="text-2xl text-green-500">
-            Tes2
-      </div>
-    </main>
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 }
