@@ -415,11 +415,11 @@ footer {
   @apply md:flex md:justify-between py-10;
 }
 .sitemaps .sitemaps-link {
-  @apply mb-5 md:mb-0;
+  @apply mb-5 md:mb-0 flex md:block justify-between;
 }
 .sitemaps .sitemaps-link-a {
   @apply text-neutral-100 text-base;
-  @apply mr-[60px];
+  @apply md:mr-[60px];
 }
 .sitemaps .sitemaps-sosmed {
   @apply flex justify-center;
